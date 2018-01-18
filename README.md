@@ -42,6 +42,6 @@ Frontend:
 ```
 git commit -m "Initial commit"
 git remote add NgSpringIngot https://github.com/aleksey-v-kutergin/ng-spring-ingot.git
-git push NgSpringIngot master
+git push -f origin master
 ```
 Можно работать дальше :) Я оставляю градле-враппер под контролем версий чтобы приложение всегда можно было собрать без gradle и IDE из консоли.
