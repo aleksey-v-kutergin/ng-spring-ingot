@@ -25,7 +25,7 @@ Frontend:
 
 ## Subtle moments of set up
 
-** Создание проекта **
+**Создание проекта**
 Тут ничего сложного, открываем Intellij IDEA. Выбираем создать новый проект -> Gradle -> Отмечаем java, web.
 
 В мастере важно отметить следующие галочки:
@@ -42,6 +42,6 @@ Frontend:
 ```
 git commit -m "Initial commit"
 git remote add NgSpringIngot https://github.com/aleksey-v-kutergin/ng-spring-ingot.git
-git push -f origin master
+git NgSpringIngot -f origin master
 ```
 Можно работать дальше :) Я оставляю градле-враппер под контролем версий чтобы приложение всегда можно было собрать без gradle и IDE из консоли.
