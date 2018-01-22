@@ -35,9 +35,27 @@ dependencyManagement {
 }
 
 dependencies {
-    compile group: 'org.springframework',  name: 'spring-webmvc'
-    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    //
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+
+    // Работа в jsp
+    compile group: 'javax.servlet', name: 'jstl'
+
+    // Артефакты спринга:
+    compile group: 'org.springframework',  name: 'spring-webmvc' // Имплементация MVC
+    // Интеграция сторонних библиотек в контекст приложения:
+    // например кэширование через ecache, отправка электронной почты
+    compile group: 'org.springframework', name: 'spring-context-support'
+
+    // Логгирование:
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j'
+    compile group: 'ch.qos.logback', name: 'logback-classic'
+
+    // Процессинг мессаджей: java -> JSON -> java:
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5' // Работа с собственными типами хибернейта
+
+    // Тестирование
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
