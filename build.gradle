@@ -1,8 +1,6 @@
 group 'ru.rusquant'
 version '1.0-SNAPSHOT'
 
-// Определение зависимостей для самго build.gradle
-// Если скрипт сборки зависит от каких-либо плагинов, то их нужно добавлять здесь
 buildscript {
     ext{
         springBootVersion = '1.5.2.RELEASE'
