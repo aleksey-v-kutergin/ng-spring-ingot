@@ -14,8 +14,4 @@ public class CommonController {
         return new ModelAndView("index");
     }
 
-    @RequestMapping(value = "/ng-spring-ingot", method = RequestMethod.GET)
-    public ModelAndView indexBaseHref() {
-       return new ModelAndView("index");
-    }
 }

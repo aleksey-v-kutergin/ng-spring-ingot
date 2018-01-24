@@ -11,6 +11,7 @@
             // (все href ссылки должны также указывать на url без hashbang).
             $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('!');
+            debugger;
 
             $urlRouterProvider.otherwise('/home');
 
@@ -19,11 +20,11 @@
                     url: '/home',
                     views: {
                         'main': {
-                            templateUrl: '../app/components/home/home.template.html',
-                            controller: 'HomeController'
+                            templateUrl: 'app/components/home/home.template.html',
+                            controller: 'homeController'
                         },
                         'navigation': {
-                            templateUrl: '../app/components/home/home.template.html'
+                            templateUrl: 'app/components/home/home.template.html'
                         }
                     }
                 })

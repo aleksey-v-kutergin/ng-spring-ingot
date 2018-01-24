@@ -44,9 +44,15 @@ dependencies {
 
     // Артефакты спринга:
     compile group: 'org.springframework',  name: 'spring-webmvc' // Имплементация MVC
+    compile group: 'org.springframework.data', name: 'spring-data-jpa' // Очень удобная штука
     // Интеграция сторонних библиотек в контекст приложения:
     // например кэширование через ecache, отправка электронной почты
     compile group: 'org.springframework', name: 'spring-context-support'
+
+    // Работа с БД и доменный слой
+    compile group: 'commons-dbcp', name: 'commons-dbcp' // DB-драйвера
+    compile group: 'org.hibernate', name: 'hibernate-core' // Поодержка хибера
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager' // Поодержка хибера
 
     // Логгирование:
     compile group: 'org.slf4j', name: 'jcl-over-slf4j'
