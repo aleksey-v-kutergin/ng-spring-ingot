@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /** Общий контроллер приложения. Кто-то же должен возврашать index.html **/
 @Controller
-public class MvcController {
+public class CommonController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index() {
