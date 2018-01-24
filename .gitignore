@@ -4,3 +4,4 @@ build/
 gradlew
 gradlew.bat
 settings.gradle
+src/main/webapp/vendor

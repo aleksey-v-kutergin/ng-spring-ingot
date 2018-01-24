@@ -35,10 +35,11 @@ dependencyManagement {
 }
 
 dependencies {
-    //
+    // Импортирование Servlet API для инициализации и работы нашего
+    // приложения в контейнере сервлетов
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
 
-    // Работа в jsp
+    // Библиотека jsp тэков
     compile group: 'javax.servlet', name: 'jstl'
 
     // Артефакты спринга:

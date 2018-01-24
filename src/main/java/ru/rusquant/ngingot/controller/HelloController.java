@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.rusquant.ngingot.service.HelloService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/ng-spring-ingot/api")
 public class HelloController {
 
     @Autowired

@@ -31,14 +31,16 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
     /** Регистрируем расположение статичных ресурсов: html, css, js... **/
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        super.addResourceHandlers(registry);
+        registry.addResourceHandler("/app/**").addResourceLocations("/app/");
+        registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+        registry.addResourceHandler("/vendor/**").addResourceLocations("/vendor/");
     }
 
     /** Регистрируем бин резолвера представление и говорим где ему искать вьюхи **/
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setPrefix("/WEB-INF/");
         viewResolver.setSuffix(".jsp"); // точкой входа являектся index.jsp
         return viewResolver;
     }

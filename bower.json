@@ -1,0 +1,25 @@
+{
+  "name": "NgSpringIngot",
+  "version": "1.0.0",
+  "authors": ["Aleksey Kutergin <aleksey.v.kutergin@gmail.com>"],
+  "description": "Start CRUD project in Java, Spring, AngularJS",
+  "license": "Apache 2.0",
+  "homepage": "http:\\rusquant.ru",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/vendor"
+  ],
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-ui-router": "^0.4.2",
+    "angular-ui-grid": "^4.0.2",
+    "jquery": "^2.2.4",
+    "jquery-ui": "^1.12.1",
+    "angular-modal-service": "^0.10.0",
+    "ngmap": "^1.17.8"
+  },
+  "main": "src/main/webapp/WEB-INF/views/index.jsp"
+}
