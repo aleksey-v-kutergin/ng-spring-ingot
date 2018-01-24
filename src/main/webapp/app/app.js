@@ -11,10 +11,8 @@
             // (все href ссылки должны также указывать на url без hashbang).
             $locationProvider.html5Mode(true);
             $locationProvider.hashPrefix('!');
-            debugger;
 
             $urlRouterProvider.otherwise('/home');
-
             $stateProvider
                 .state('home', {
                     url: '/home',
