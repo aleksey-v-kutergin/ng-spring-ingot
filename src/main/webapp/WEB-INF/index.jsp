@@ -7,7 +7,7 @@
 
     <head>
         <meta charset="utf-8">
-        <base href="/">
+        <base href="/ng-spring-ingot/">
         <title>NgSpringIngot</title>
 
         <!-- jQuery -->
