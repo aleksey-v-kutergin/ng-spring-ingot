@@ -10,7 +10,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        //classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
         classpath "io.spring.gradle:dependency-management-plugin:${dmVersion}"
     }
 }
@@ -30,7 +30,15 @@ repositories {
 
 dependencyManagement {
     imports {
+        // Этот бом импортирует дефолтные настройки и секцию с менеджементом зависиомстей,
+        // что позволет не указывать версии для зависимостей спринга
         mavenBom 'org.springframework.boot:spring-boot-starter-parent:1.5.1.RELEASE'
+
+        // Этот бом содержит все зависимости, необходимые для создания web-приложения
+        //mavenBom 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+
+        // Этот бом предоставляет ключевые зависимости для: Hibernate, Spring Data, Spring ORM
+        //mavenBom 'org.springframework.boot:spring-boot-starter-data-jpa:1.5.1.RELEASE'
     }
 }
 
@@ -48,11 +56,14 @@ dependencies {
     // Интеграция сторонних библиотек в контекст приложения:
     // например кэширование через ecache, отправка электронной почты
     compile group: 'org.springframework', name: 'spring-context-support'
+    compile group: 'org.springframework', name: 'spring-jdbc' // Пакет содержит классы, необходимые для создания БД из скриптов.
 
     // Работа с БД и доменный слой
     compile group: 'commons-dbcp', name: 'commons-dbcp' // DB-драйвера
     compile group: 'org.hibernate', name: 'hibernate-core' // Поодержка хибера
     compile group: 'org.hibernate', name: 'hibernate-entitymanager' // Поодержка хибера
+    compile group: 'org.postgresql', name: 'postgresql'
+    compile group: 'com.h2database', name: 'h2'
 
     // Логгирование:
     compile group: 'org.slf4j', name: 'jcl-over-slf4j'

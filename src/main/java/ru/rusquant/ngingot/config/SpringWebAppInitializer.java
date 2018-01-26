@@ -1,5 +1,6 @@
 package ru.rusquant.ngingot.config;
 
+import org.h2.server.web.WebServlet;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
@@ -22,6 +23,10 @@ public class SpringWebAppInitializer implements WebApplicationInitializer {
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
-    }
 
+        // Созадем сервлет для базы H2
+        ServletRegistration.Dynamic h2Console = servletContext.addServlet("h2Console", new WebServlet());
+        h2Console.setLoadOnStartup(2);
+        h2Console.addMapping("/admin/h2/*");
+    }
 }
