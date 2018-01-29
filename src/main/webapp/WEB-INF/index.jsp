@@ -28,6 +28,9 @@
         <!-- Скрипты приложения -->
         <script src="app/app.js"></script>
         <script src="app/components/home/home.controller.js"></script>
+        <script src="app/components/home/parts/header/header-bar.directive.js"></script>
+        <script src="app/components/home/parts/sidebar/side-bar.directive.js"></script>
+        <script src="app/components/home/parts/footer/status-bar.directive.js"></script>
 
         <!-- Дизайн -->
         <script src="assets/js/script.js"></script>

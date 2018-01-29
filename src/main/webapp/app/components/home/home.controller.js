@@ -1,7 +1,12 @@
 (function () {
     'use strict';
 
-    angular.module('homeModule', [])
+    angular
+        .module('homeModule', [
+            'headerBarModule',
+            'sideBarModule',
+            'statusBarModule'
+        ])
         .controller('homeController', function ($scope, $http) {
             $http.get('api/user/all')
                 .success(function (data) {
