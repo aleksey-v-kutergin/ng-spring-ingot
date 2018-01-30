@@ -1,20 +1,22 @@
-<div class="page" ng-controller="homeController">
+<div id="homePageContainer" ng-controller="homeController" layout="row" layout-wrap>
 
-    <div class="page__head">
+    <div class="md-toolbar">
         <header-bar></header-bar>
     </div>
 
-    <div class="page__body">
-
-        <div class="page__side">
+    <div flex layout="row">
+        <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1">
             <side-bar></side-bar>
-        </div>
+        </md-sidenav>
 
-        <main class="page__main">
-            <!-- content here -->
-        </main>
+        <div layout="column" flex>
+            <div class="box1">70</div>
+            <div class="box2">Fixed</div>
+            <div class="box3">Flex</div>
+        </div>
 
     </div>
 
-    <status-bar></status-bar>
+
+    <!-- <status-bar></status-bar> -->
 </div>

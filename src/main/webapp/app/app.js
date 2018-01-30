@@ -4,6 +4,7 @@
     angular
         .module('ngSpringIngot', [
             'ui.router',
+            'ngMaterial',
             'homeModule'
         ])
         .config(function ($httpProvider, $locationProvider, $stateProvider, $urlRouterProvider) {

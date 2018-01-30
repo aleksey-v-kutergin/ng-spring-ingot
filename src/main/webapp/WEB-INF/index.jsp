@@ -14,12 +14,16 @@
         <script src="vendor/jquery/dist/jquery.js"></script>
         <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="vendor/angular-material/angular-material.css">
         <link rel="stylesheet" type="text/css" href="vendor/angular-ui-grid/ui-grid.css">
 
         <!-- AngularJS  -->
         <script src="vendor/angular/angular.min.js"></script>
+        <script src="vendor/angular-aria/angular-aria.js"></script>
+        <script src="vendor/angular-animate/angular-animate.js"></script>
+        <script src="vendor/angular-material/angular-material.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script>
+        <!-- <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script> -->
 
         <!-- Либы  -->
         <script src="vendor/angular-ui-grid/ui-grid.min.js"></script>
@@ -39,7 +43,7 @@
 
     </head>
 
-    <body>
+    <body ng-cloak layout="column">
         <ui-view ui-i18n="{{_lang}}" name="main"></ui-view>
     </body>
 

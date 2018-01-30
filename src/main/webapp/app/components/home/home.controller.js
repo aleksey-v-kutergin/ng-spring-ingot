@@ -3,23 +3,20 @@
 
     angular
         .module('homeModule', [
-            'headerBarModule',
-            'sideBarModule',
-            'statusBarModule'
+                'headerBarModule',
+                'sideBarModule',
+                'statusBarModule'
         ])
         .controller('homeController', function ($scope, $http) {
-            $http.get('api/user/all')
-                .success(function (data) {
-                    debugger;
-                    var msg = 'Database users:';
-                    data.forEach(function (user) {
-                        msg += "\n\t" + JSON.stringify(user);
-                    });
-                    $scope._message = msg;
-                })
-                .error(function (error) {
-                    console.log(error);
+            $http.get('api/user/all').then(function (response) {
+                var msg = 'Database users:';
+                response.data.forEach(function (user) {
+                    msg += "\n\t" + JSON.stringify(user);
                 });
+                $scope._message = msg;
+            }, function (error) {
+                console.log(error);
+            });
         });
 
 })();

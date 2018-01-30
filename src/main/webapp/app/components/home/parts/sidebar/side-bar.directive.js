@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sideBarModule')
+        .module('sideBarModule', [])
         .directive('sideBar', function () {
             return {
                 restrict: 'E',
