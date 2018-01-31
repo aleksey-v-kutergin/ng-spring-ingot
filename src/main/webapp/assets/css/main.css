@@ -2,24 +2,43 @@ div {
     border: 2px solid darkblue;
 }
 
-
-.box3, .box2, .box1 {
-    display:flex;
-    box-sizing: border-box;
-    min-width:100%;
+.user-avatar {
+    border-radius: 99%;
 }
 
-.box1 {
-    max-height:70%;
-    flex:1 1 70%;
+md-content.md-default-theme {
+    background-color: gray;
 }
 
-.box2 {
-    height:20px;
+md-card {
+    background-color: #fff;
 }
 
-.box3 {
-    height:30%;
-    max-height:30%;
-    flex:1 1 30%;
+h2 {
+    font-weight: 400;
+}
+
+h2:first-of-type {
+    margin-top: 0;
+}
+
+.md-toolbar-tools-bottom {
+    font-size: small;
+}
+
+.md-toolbar-tools-bottom:last-child {
+    opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+    fill: #fff;
+}
+md-sidenav {
+    fill: #737373;
+}
+
+ng-md-icon {
+    position: relative;
+    top: 5px;
 }

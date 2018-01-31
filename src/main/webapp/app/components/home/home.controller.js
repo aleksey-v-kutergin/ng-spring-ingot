@@ -3,6 +3,9 @@
 
     angular
         .module('homeModule', [
+                'ngMaterial',
+                'ngMdIcons',
+                'appCommons',
                 'headerBarModule',
                 'sideBarModule',
                 'statusBarModule'

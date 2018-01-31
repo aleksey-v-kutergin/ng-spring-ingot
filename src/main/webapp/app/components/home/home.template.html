@@ -1,22 +1,20 @@
-<div id="homePageContainer" ng-controller="homeController" layout="row" layout-wrap>
+<div layout="row"
+     layout-wrap
+     style="background-color:plum;"
+     layout-fill
+     ng-controller="homeController">
 
-    <div class="md-toolbar">
-        <header-bar></header-bar>
+    <div flex="grow"style="background-color:red;height: 8%">
+        [flex="grow"]
+    </div>
+    <div flex="20" style="background-color:blue;height: 84%">
+        [flex="15"]
+    </div>
+    <div flex="80" style="background-color:green;height: 84%">
+        [flex="85"]
+    </div>
+    <div flex="grow"style="background-color:orange;height: 8%">
+        [flex="grow"]
     </div>
 
-    <div flex layout="row">
-        <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1">
-            <side-bar></side-bar>
-        </md-sidenav>
-
-        <div layout="column" flex>
-            <div class="box1">70</div>
-            <div class="box2">Fixed</div>
-            <div class="box3">Flex</div>
-        </div>
-
-    </div>
-
-
-    <!-- <status-bar></status-bar> -->
 </div>

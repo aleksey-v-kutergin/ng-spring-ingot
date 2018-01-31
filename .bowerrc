@@ -1,5 +1,4 @@
 {
   "directory": "src/main/webapp/vendor",
-  "json": "bower.json",
   "strict-ssl": false
 }

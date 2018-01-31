@@ -22,6 +22,7 @@
         <script src="vendor/angular-aria/angular-aria.js"></script>
         <script src="vendor/angular-animate/angular-animate.js"></script>
         <script src="vendor/angular-material/angular-material.js"></script>
+        <script src="vendor/angular-material-icons/angular-material-icons.min.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
         <!-- <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script> -->
 
@@ -31,6 +32,7 @@
 
         <!-- Скрипты приложения -->
         <script src="app/app.js"></script>
+        <script src="app/components/common/user/user-avatar.directive.js"></script>
         <script src="app/components/home/home.controller.js"></script>
         <script src="app/components/home/parts/header/header-bar.directive.js"></script>
         <script src="app/components/home/parts/sidebar/side-bar.directive.js"></script>
@@ -43,7 +45,7 @@
 
     </head>
 
-    <body ng-cloak layout="column">
+    <body ng-cloak>
         <ui-view ui-i18n="{{_lang}}" name="main"></ui-view>
     </body>
 
