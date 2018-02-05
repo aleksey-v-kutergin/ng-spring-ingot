@@ -3,12 +3,9 @@
 
     angular
         .module('homeModule', [
-                'ngMaterial',
-                'ngMdIcons',
-                'appCommons',
                 'headerBarModule',
                 'sideBarModule',
-                'statusBarModule'
+                'footerBarModule'
         ])
         .controller('homeController', function ($scope, $http) {
             $http.get('api/user/all').then(function (response) {

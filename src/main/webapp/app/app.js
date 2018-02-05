@@ -4,8 +4,6 @@
     angular
         .module('ngSpringIngot', [
             'ui.router',
-            'ngMaterial',
-            'ngMdIcons',
             'homeModule'
         ])
         .config(function ($httpProvider,

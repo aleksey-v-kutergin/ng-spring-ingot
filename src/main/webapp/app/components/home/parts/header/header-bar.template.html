@@ -1,28 +1,42 @@
-<div layout="row" layout-fill>
-    <div flex="20">
-        <md-toolbar layout-fill md-colors="{background: 'grey-100'}">
-            <md-icon class="material-icons">power_settings_new</md-icon>
-        </md-toolbar>
+<header class="header">
+
+    <div class="header__part">
+
+        <div class="header__item">
+            <a class="header__logo  logo">
+                <img src="assets/img/company-logo.svg" alt="">
+            </a>
+        </div>
+
+        <div class="header__separator"></div>
+        <div class="header__item">
+            <header-toolbar></header-toolbar>
+        </div>
+
     </div>
-    <div flex="60" style="background-color: purple" md-colors="{background: 'grey-100'}">
+
+    <div class="header__part">
+
+        <div class="header__separator"></div>
+        <div class="header__item">
+            <help-bar></help-bar>
+        </div>
+
+        <div class="header__separator"></div>
+        <div class="header__item">
+            <settings-bar></settings-bar>
+        </div>
+
+        <div class="header__separator"></div>
+        <div class="header__item">
+            <user-bar></user-bar>
+        </div>
+
+        <div class="header__separator"></div>
+        <div class="header__item">
+            <logout-bar></logout-bar>
+        </div>
+
     </div>
-    <div flex="20" style="background-color: tomato">
-        <md-toolbar layout="row"
-                    layout-align="center center"
-                    layout-fill
-                    md-colors="{background: 'grey-100'}">
-            <div class="md-toolbar-tools">
-                <md-button
-                        class="md-icon-button"
-                        aria-label="Settings">
-                    <md-icon class="material-icons">settings</md-icon>
-                </md-button>
-                <md-button
-                        class="md-icon-button"
-                        aria-label="Logout">
-                    <md-icon class="material-icons">power_settings_new</md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
-    </div>
-</div>
+
+</header>

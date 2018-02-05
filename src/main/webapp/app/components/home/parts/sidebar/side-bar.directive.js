@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sideBarModule', ['ngMaterial', 'ngMdIcons'])
+        .module('sideBarModule', [])
         .directive('sideBar', function () {
             return {
                 restrict: 'E',

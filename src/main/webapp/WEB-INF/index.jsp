@@ -8,24 +8,19 @@
     <head>
         <meta charset="utf-8">
         <base href="/ng-spring-ingot/">
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
         <title>NgSpringIngot</title>
 
         <!-- jQuery -->
         <script src="vendor/jquery/dist/jquery.js"></script>
         <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="vendor/angular-material/angular-material.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="vendor/angular-ui-grid/ui-grid.css">
 
         <!-- AngularJS  -->
         <script src="vendor/angular/angular.min.js"></script>
-        <script src="vendor/angular-aria/angular-aria.js"></script>
-        <script src="vendor/angular-animate/angular-animate.js"></script>
-        <script src="vendor/angular-material/angular-material.js"></script>
-        <script src="vendor/angular-material-icons/angular-material-icons.min.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <!-- <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script> -->
+        <script src="vendor/angular-modal-service/dst/angular-modal-service.min.js"></script>
 
         <!-- Либы  -->
         <script src="vendor/angular-ui-grid/ui-grid.min.js"></script>
@@ -33,20 +28,29 @@
 
         <!-- Скрипты приложения -->
         <script src="app/app.js"></script>
-        <script src="app/components/common/user/user-avatar.directive.js"></script>
         <script src="app/components/home/home.controller.js"></script>
+
+        <!-- Хедер и его возможные составляющие -->
         <script src="app/components/home/parts/header/header-bar.directive.js"></script>
+        <script src="app/components/home/parts/header/parts/help/help-bar.directive.js"></script>
+        <script src="app/components/home/parts/header/parts/logout/logout-bar.directive.js"></script>
+        <script src="app/components/home/parts/header/parts/settings/settings-bar.directive.js"></script>
+        <script src="app/components/home/parts/header/parts/toolbar/header-toolbar.directive.js"></script>
+        <script src="app/components/home/parts/header/parts/user/user-bar.directive.js"></script>
+
+
         <script src="app/components/home/parts/sidebar/side-bar.directive.js"></script>
-        <script src="app/components/home/parts/footer/status-bar.directive.js"></script>
+        <script src="app/components/home/parts/footer/footer-bar.directive.js"></script>
 
         <!-- Дизайн -->
         <script src="assets/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="vendor/angular-ui-grid/ui-grid.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
     </head>
 
-    <body ng-cloak>
+    <body>
         <ui-view ui-i18n="{{_lang}}" name="main"></ui-view>
     </body>
 

@@ -1,20 +1,22 @@
-<div layout="row"
-     layout-wrap
-     style="background-color:plum;"
-     layout-fill
-     ng-controller="homeController">
+<div class="page">
 
-    <div flex="grow" class="header">
+    <div class="page__head">
         <header-bar></header-bar>
     </div>
-    <div flex="20" class="side-panel">
-        <side-bar></side-bar>
+
+    <div class="page__body">
+
+        <!-- Боковая панель. Обычно под навигацию -->
+        <div class="page__side">
+            <side-bar></side-bar>
+        </div>
+
+        <!-- Основная содержательная часть страницы -->
+        <main class="page__main"></main>
+
     </div>
-    <div flex="80" class="content-panel">
-        [flex="85"]
-    </div>
-    <div flex="grow" class="footer">
-        <status-bar></status-bar>
-    </div>
+
+    <!-- Футер страницы -->
+    <footer-bar></footer-bar>
 
 </div>
