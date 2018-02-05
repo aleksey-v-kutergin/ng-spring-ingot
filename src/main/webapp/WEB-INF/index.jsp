@@ -15,6 +15,7 @@
         <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="vendor/angular-material/angular-material.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="vendor/angular-ui-grid/ui-grid.css">
 
         <!-- AngularJS  -->

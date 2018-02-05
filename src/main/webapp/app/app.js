@@ -5,9 +5,14 @@
         .module('ngSpringIngot', [
             'ui.router',
             'ngMaterial',
+            'ngMdIcons',
             'homeModule'
         ])
-        .config(function ($httpProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
+        .config(function ($httpProvider,
+                          $locationProvider,
+                          $stateProvider,
+                          $urlRouterProvider) {
+            
             // Html5 mode превращает angularjs routes из вида example.com/#!/home в вид example.com/home
             // (все href ссылки должны также указывать на url без hashbang).
             $locationProvider.html5Mode(true);

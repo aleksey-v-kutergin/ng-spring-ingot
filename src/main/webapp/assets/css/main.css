@@ -1,5 +1,25 @@
 div {
-    border: 2px solid darkblue;
+    //border: 2px solid darkblue;
+}
+
+.header {
+    background-color:red;
+    height: 10%;
+}
+
+.side-panel {
+    background-color:blue;
+    height: 87%;
+}
+
+.content-panel {
+    background-color:green;
+    height: 87%;
+}
+
+.footer {
+    background-color:orange;
+    height: 3%;
 }
 
 .user-avatar {

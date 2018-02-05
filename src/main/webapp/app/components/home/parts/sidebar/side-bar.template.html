@@ -1,0 +1,81 @@
+<md-sidenav
+        flex
+        layout="column"
+        layout-fill
+        class="md-sidenav-left md-whiteframe-z2"
+        md-component-id="left"
+        md-is-locked-open="true">
+
+    <!-- Контейнер под инфу о юзере -->
+    <md-toolbar class="md-tall md-hue-2" md-colors="{background: 'blue-A700'}">
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset">
+            <user-avatar></user-avatar>
+            <span></span>
+            <div>Firstname Lastname</div>
+            <div>email@domainname.com</div>
+        </div>
+    </md-toolbar>
+
+    <!-- Список модулей системы -->
+    <md-list>
+
+        <md-divider></md-divider>
+        <md-subheader>Administration</md-subheader>
+
+        <!-- Модуль админки -->
+        <md-list-item>
+            <a>
+                <div md-ink-ripple layout="row" layout-align="start center">
+                    <div class="insert">
+                        <md-icon class="material-icons">group</md-icon>
+                    </div>
+                    <div class="insert">Users</div>
+                </div>
+            </a>
+        </md-list-item>
+
+        <md-list-item>
+            <a>
+                <div md-ink-ripple layout="row" layout-align="start center">
+                    <div class="insert">
+                        <md-icon class="material-icons">person_add</md-icon>
+                    </div>
+                    <div class="insert">Register requests</div>
+                </div>
+            </a>
+        </md-list-item>
+
+        <md-divider></md-divider>
+        <md-subheader>Applied functionality</md-subheader>
+
+        <!-- Гео модуль -->
+        <md-list-item>
+            <a>
+                <div md-ink-ripple layout="row" layout-align="start center">
+                    <div class="insert">
+                        <md-icon class="material-icons">language</md-icon>
+                    </div>
+                    <div class="insert">Geo</div>
+                </div>
+            </a>
+        </md-list-item>
+
+        <!-- Горизонтальный разделитель -->
+        <md-divider></md-divider>
+        <md-subheader>Analytics</md-subheader>
+
+        <md-list-item>
+            <a>
+                <div md-ink-ripple layout="row" layout-align="start center">
+                    <div class="insert">
+                        <md-icon class="material-icons">dashboard</md-icon>
+                    </div>
+                    <div class="insert">Analytics</div>
+                </div>
+            </a>
+        </md-list-item>
+
+    </md-list>
+
+</md-sidenav>

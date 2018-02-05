@@ -4,17 +4,17 @@
      layout-fill
      ng-controller="homeController">
 
-    <div flex="grow"style="background-color:red;height: 8%">
-        [flex="grow"]
+    <div flex="grow" class="header">
+        <header-bar></header-bar>
     </div>
-    <div flex="20" style="background-color:blue;height: 84%">
-        [flex="15"]
+    <div flex="20" class="side-panel">
+        <side-bar></side-bar>
     </div>
-    <div flex="80" style="background-color:green;height: 84%">
+    <div flex="80" class="content-panel">
         [flex="85"]
     </div>
-    <div flex="grow"style="background-color:orange;height: 8%">
-        [flex="grow"]
+    <div flex="grow" class="footer">
+        <status-bar></status-bar>
     </div>
 
 </div>
