@@ -38,9 +38,15 @@
         <script src="app/components/home/parts/header/parts/toolbar/header-toolbar.directive.js"></script>
         <script src="app/components/home/parts/header/parts/user/user-bar.directive.js"></script>
 
+        <!-- Грид пользователей -->
+        <script src="app/components/grids/user/user-grid.directive.js"></script>
+        <script src="app/components/grids/user/user-grid.controller.js"></script>
 
         <script src="app/components/home/parts/sidebar/side-bar.directive.js"></script>
         <script src="app/components/home/parts/footer/footer-bar.directive.js"></script>
+
+        <!-- Модуль с сервисами -->
+        <script src="app/components/services/user.service.js"></script>
 
         <!-- Дизайн -->
         <script src="assets/js/script.js"></script>
