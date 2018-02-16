@@ -10,3 +10,12 @@ CREATE TABLE ingot_users (
   registration_date     DATE NOT NULL DEFAULT CURRENT_DATE,
   is_password_expired   BOOLEAN NOT NULL DEFAULT FALSE
 );
+
+CREATE TABLE app_modules (
+  id      INTEGER DEFAULT nextval('ingot_id_generator') PRIMARY KEY,
+  ident   VARCHAR(255) NOT NULL,
+  name    VARCHAR(1024) NOT NULL,
+  icon    VARCHAR(255) NOT NULL,
+  parent  INTEGER,
+  ord     INTEGER
+);

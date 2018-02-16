@@ -4,8 +4,8 @@
     angular
         .module('userGrid')
         .controller('userGridController', function ($scope, userService) {
-            debugger;
             var gridApi = null;
+
             $scope.columns = [
                 { field: 'id',                name: 'id',                 displayName: 'Идентификатор', type: 'number', visible: false },
                 { field: 'name',              name: 'name',               displayName: 'ФИО' },
@@ -14,6 +14,7 @@
                 { field: 'registrationDate',  name: 'registrationDate',   displayName: 'Дата регистрации' },
                 { field: 'isPasswordExpired', name: 'isPasswordExpired',  displayName: 'Просрочен ли пароль' }
             ];
+
             $scope.grid = {
                 columnDefs: $scope.columns,
                 enableRowSelection: true,
@@ -28,8 +29,8 @@
             };
 
             var fetchUsers = function () {
-                userService.getAllUsers().then(function (response) {
-                    $scope.grid.data = response.data;
+                userService.getAllUsers().then(function (data) {
+                    $scope.grid.data = data;
                 }, function (error) {
                     console.log(error);
                 });

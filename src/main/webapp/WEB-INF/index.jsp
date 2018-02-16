@@ -43,10 +43,16 @@
         <script src="app/components/grids/user/user-grid.controller.js"></script>
 
         <script src="app/components/home/parts/sidebar/side-bar.directive.js"></script>
+        <script src="app/components/home/parts/sidebar/side-bar.controller.js"></script>
+
+        <script src="app/components/home/parts/sidebar/navigation/appmodulelist/app-module-list.directive.js"></script>
+        <script src="app/components/home/parts/sidebar/navigation/appmodulelist/app-module-list.controller.js"></script>
+
         <script src="app/components/home/parts/footer/footer-bar.directive.js"></script>
 
         <!-- Модуль с сервисами -->
         <script src="app/components/services/user.service.js"></script>
+        <script src="app/components/services/app-module.service.js"></script>
 
         <!-- Дизайн -->
         <script src="assets/js/script.js"></script>

@@ -1,5 +1,5 @@
 <!-- toggle class: nav--mini -->
-<nav class="nav">
+<nav class="nav" ng-class="{'nav--mini': isOpened==false}">
 
     <div class="nav__top">
         <a class="main-link">
@@ -12,7 +12,9 @@
 
 
     <div class="nav__mid">
-        <ul class="nav__list">
+        <app-module-list></app-module-list>
+
+       <!-- <ul class="nav__list">
 
             <li class="nav__item  nav__item--active  nav__item--open">
                 <div class="nav__head">
@@ -59,13 +61,15 @@
                 </div>
             </li>
 
-        </ul>
+        </ul> -->
+
+
     </div>
 
 
 
     <div class="nav__bottom">
-        <div class="nav__toggle"  title="Свернуть меню"></div>
+        <div class="nav__toggle"  title="Свернуть меню" ng-click="toggleSideBar()"></div>
     </div>
 
 </nav>

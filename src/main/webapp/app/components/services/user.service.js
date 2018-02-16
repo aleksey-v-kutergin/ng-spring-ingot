@@ -3,13 +3,21 @@
 
     angular
         .module('coreModule', [])
-        .service('userService', function ($http) {
-            this.apiUrlRoot = 'api';
+        .factory('userService', function ($http, $q) {
+            var service = {};
+            service.apiUrlRoot = 'api';
 
-            this.getAllUsers = function () {
-                return $http.get(this.apiUrlRoot + '/user/all');
-            }
-            
+            service.getAllUsers = function () {
+                var defer = $q.defer();
+                $http.get(this.apiUrlRoot + '/user/all').then(function (response) {
+                    defer.resolve(response.data);
+                }, function (error) {
+                    defer.reject(error);
+                });
+                return defer.promise;
+            };
+
+            return service;
         });
 
 })();

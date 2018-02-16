@@ -1,0 +1,30 @@
+<ul class="nav__list">
+
+     <li class="nav__item" ng-repeat="parent in appModulesTree">
+         <div class="nav__head">
+             <i class="nav__icon">
+                 <img src="{{parent.icon}}">
+             </i>
+             <a class="nav__label">{{parent.name}}</a>
+         </div>
+
+         <div class="nav__body" ng-if="$scope.hasSubmodules(parent)">
+             <ul class="subnav">
+                 <li class="subnav__item  subnav__item--active">
+                     <i class="nav__icon">
+                         <img src="assets/img/user_accounts.svg">
+                     </i>
+                     <a class="subnav__label">Пользователи</a>
+                 </li>
+                 <li class="subnav__item">
+                     <i class="nav__icon">
+                         <img src="assets/img/verified_user.svg">
+                     </i>
+                     <a class="subnav__label">Запросы регистрации</a>
+                 </li>
+             </ul>
+         </div>
+
+     </li>
+
+ </ul>
