@@ -1,27 +1,30 @@
 <ul class="nav__list">
 
-     <li class="nav__item" ng-repeat="parent in appModulesTree">
+     <li class="nav__item"
+         ng-repeat="parent in appModulesTree"
+         ng-class="{'nav__item--active': parent==selectedMainModule, 'nav__item--open': expandMainModule}"
+         ng-click="onMainModuleClick(parent, $event)">
          <div class="nav__head">
+             <div class="nav__drop-toggle" ng-if="hasSubmodules(parent)"></div>
              <i class="nav__icon">
                  <img src="{{parent.icon}}">
              </i>
              <a class="nav__label">{{parent.name}}</a>
          </div>
 
-         <div class="nav__body" ng-if="$scope.hasSubmodules(parent)">
+         <div class="nav__body" ng-if="expandMainModule">
              <ul class="subnav">
-                 <li class="subnav__item  subnav__item--active">
+
+                 <li class="subnav__item"
+                     ng-repeat="child in parent.subModules"
+                     ng-class="{'subnav__item--active': child==selectedSubModule}"
+                     ng-click="onSubModuleClick(child, $event)">
                      <i class="nav__icon">
-                         <img src="assets/img/user_accounts.svg">
+                         <img src="{{child.icon}}">
                      </i>
-                     <a class="subnav__label">Пользователи</a>
+                     <a class="subnav__label">{{child.name}}</a>
                  </li>
-                 <li class="subnav__item">
-                     <i class="nav__icon">
-                         <img src="assets/img/verified_user.svg">
-                     </i>
-                     <a class="subnav__label">Запросы регистрации</a>
-                 </li>
+
              </ul>
          </div>
 

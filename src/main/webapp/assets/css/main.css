@@ -967,7 +967,11 @@ iframe {
 
 .CB_data_cell a{cursor: pointer;}
 
-.ui-grid, .ui-grid-viewport {height: 100% !important;}
+.ui-grid, .ui-grid-viewport {
+    height: 100% !important;
+    overflow-x: hidden !important;
+}
+
 
 .grid {}
 .grid .grid__row {}

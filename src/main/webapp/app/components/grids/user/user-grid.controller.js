@@ -3,9 +3,7 @@
     
     angular
         .module('userGrid')
-        .controller('userGridController', function ($scope, userService) {
-            var gridApi = null;
-
+        .controller('userGridController', function ($scope, $timeout, userService) {
             $scope.columns = [
                 { field: 'id',                name: 'id',                 displayName: 'Идентификатор', type: 'number', visible: false },
                 { field: 'name',              name: 'name',               displayName: 'ФИО' },
@@ -23,9 +21,20 @@
                 enableHorizontalScrollbar: 0,
                 enableVerticalScrollbar: 0,
                 onRegisterApi: function (api) {
-                    // Чтобы было проще обращаться к апи грида
-                    gridApi = api;
+                    $scope.gridApi = api;
+                    bind(api);
                 }
+            };
+
+            var bind = function (gridApi) {
+
+                gridApi.selection.on.rowSelectionChanged($scope, function (row) {
+
+                });
+
+                $scope.$on('side-bar-toggled', function (event, data) {
+                    resize();
+                });
             };
 
             var fetchUsers = function () {
@@ -33,6 +42,12 @@
                     $scope.grid.data = data;
                 }, function (error) {
                     console.log(error);
+                });
+            };
+
+            var resize = function () {
+                $timeout(function () {
+                    $scope.gridApi.core.handleWindowResize();
                 });
             };
 
