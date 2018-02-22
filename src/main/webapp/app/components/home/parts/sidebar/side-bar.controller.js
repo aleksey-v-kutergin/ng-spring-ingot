@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sideBarModule')
+        .module('homeModule')
         .controller('sideBarController', function ($scope, $rootScope) {
             $scope.isOpened = true;
 

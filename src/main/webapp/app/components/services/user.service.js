@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('coreModule', [])
+        .module('coreModule')
         .factory('userService', function ($http, $q) {
             var service = {};
             service.apiUrlRoot = 'api';

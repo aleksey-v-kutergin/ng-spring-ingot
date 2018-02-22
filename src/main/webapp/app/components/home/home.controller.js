@@ -2,12 +2,7 @@
     'use strict';
 
     angular
-        .module('homeModule', [
-                'headerBarModule',
-                'sideBarModule',
-                'footerBarModule',
-                'userGrid'
-        ])
+        .module('homeModule')
         .controller('homeController', function ($scope, $http) {
 
         });

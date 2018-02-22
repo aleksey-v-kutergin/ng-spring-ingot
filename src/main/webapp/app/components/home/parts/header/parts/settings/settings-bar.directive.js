@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('headerBarModule')
+        .module('homeModule')
         .directive('settingsBar', function () {
             return {
                 restrict: 'E',

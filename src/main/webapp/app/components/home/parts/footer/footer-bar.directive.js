@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('footerBarModule', [])
+        .module('homeModule')
         .directive('footerBar', function () {
            return {
                restrict: 'E',

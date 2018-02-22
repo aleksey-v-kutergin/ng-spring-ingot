@@ -2,7 +2,7 @@
     'use strict';
     
     angular
-        .module('userGrid')
+        .module('userModule')
         .controller('userGridController', function ($scope, $timeout, userService) {
             $scope.columns = [
                 { field: 'id',                name: 'id',                 displayName: 'Идентификатор', type: 'number', visible: false },

@@ -3,8 +3,14 @@
 
     angular
         .module('ngSpringIngot', [
-            'ui.router',
-            'homeModule'
+                'ui.router',
+                'coreModule',
+                'authModule',
+                'userModule',
+                'appNavigationModule',
+                'homeModule',
+                'geoModule',
+                'analyticsModule'
         ])
         .config(function ($httpProvider,
                           $locationProvider,
