@@ -7,7 +7,14 @@
          <div class="nav__head">
              <div class="nav__drop-toggle" ng-if="hasSubmodules(parent)"></div>
              <i class="nav__icon">
-                 <img src="{{parent.icon}}">
+                 <!--
+                       Интересный нюанс по поводу загрузки иконок и картинок с сервера.
+                       При загрузке щаблона происходит обработка атрибута src, но модель данных
+                       в этот момент еще не доступна, поэтому в консли вывалится ошибка 404.
+                       Для того чтобы это не происходило нужно использовать ng-src.
+                       Эта директива загружает картинку когда модель становится доступной.
+                  -->
+                 <img ng-src="{{parent.icon}}">
              </i>
              <a class="nav__label">{{parent.name}}</a>
          </div>
@@ -20,7 +27,7 @@
                      ng-class="{'subnav__item--active': child==selectedSubModule}"
                      ng-click="onSubModuleClick(child, $event)">
                      <i class="nav__icon">
-                         <img src="{{child.icon}}">
+                         <img ng-src="{{child.icon}}">
                      </i>
                      <a class="subnav__label">{{child.name}}</a>
                  </li>
