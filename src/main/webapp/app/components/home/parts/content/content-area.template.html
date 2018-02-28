@@ -1,2 +1,11 @@
-<!-- <user-grid class="fill-height"></user-grid> -->
-<div>{{moduleName}}</div>
+<div ng-switch="moduleIdent">
+    <div ng-switch-when="USERS_MODULE">
+        <users-content></users-content>
+    </div>
+    <div ng-switch-when="REGISTER_REQUESTS_MODULE">
+        <requests-content></requests-content>
+    </div>
+    <div ng-switch-default>
+        <error-content></error-content>
+    </div>
+</div>

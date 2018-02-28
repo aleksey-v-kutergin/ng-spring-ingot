@@ -10,7 +10,8 @@
                 'appNavigationModule',
                 'homeModule',
                 'geoModule',
-                'analyticsModule'
+                'analyticsModule',
+                'errorModule'
         ])
         .config(function ($httpProvider,
                           $locationProvider,

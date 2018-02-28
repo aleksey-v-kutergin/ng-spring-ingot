@@ -52,6 +52,12 @@
         <script src="app/components/user/grids/users/user-grid.directive.js"></script>
         <script src="app/components/user/grids/users/user-grid.controller.js"></script>
 
+        <script src="app/components/user/content/users/users-content.directive.js"></script>
+        <script src="app/components/user/content/users/users-content.controller.js"></script>
+
+        <script src="app/components/user/content/requests/requests-content.directive.js"></script>
+        <script src="app/components/user/content/requests/requests-content.controller.js"></script>
+
         <!-- App navigation module -->
         <script src="app/components/navigation/app-navigation.module.js"></script>
         <script src="app/components/navigation/appmodulelist/app-module-list.directive.js"></script>
@@ -81,6 +87,11 @@
 
         <!-- Analytics module -->
         <script src="app/components/analytics/analytics.module.js"></script>
+
+        <!-- Error module -->
+        <script src="app/components/error/error.module.js"></script>
+        <script src="app/components/error/content/error-content.directive.js"></script>
+        <script src="app/components/error/content/error-content.controller.js"></script>
 
     </head>
 
