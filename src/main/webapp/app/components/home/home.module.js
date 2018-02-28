@@ -6,6 +6,7 @@
      *   странички Home
      **/
     angular.module('homeModule', [
+                    'coreModule',
                     'appNavigationModule',
                     'userModule'
     ]);

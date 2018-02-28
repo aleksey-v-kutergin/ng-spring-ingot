@@ -26,6 +26,10 @@
         <script src="vendor/angular-ui-grid/ui-grid.min.js"></script>
         <link rel="stylesheet" type="text/css" href="vendor/angular-ui-grid/ui-grid.css">
 
+        <!-- RxJS and RxJS to AngularJS bridge -->
+        <script src="vendor/rxjs/dist/rx.all.js"></script>
+        <script src="vendor/angular-rx/dist/rx.angular.js"></script>
+
         <!-- App-wide scripts and app css -->
         <script src="assets/js/script.js"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
@@ -38,6 +42,7 @@
         <script src="app/components/services/core.module.js"></script>
         <script src="app/components/services/user.service.js"></script>
         <script src="app/components/services/app-module.service.js"></script>
+        <script src="app/components/services/app-navigation.service.js"></script>
 
         <!-- Auth module -->
         <script src="app/components/auth/auth.module.js"></script>
@@ -67,6 +72,9 @@
         <script src="app/components/home/parts/sidebar/side-bar.controller.js"></script>
 
         <script src="app/components/home/parts/footer/footer-bar.directive.js"></script>
+
+        <script src="app/components/home/parts/content/content-area.directive.js"></script>
+        <script src="app/components/home/parts/content/content-area.controller.js"></script>
 
         <!-- Geo module -->
         <script src="app/components/geo/geo.module.js"></script>

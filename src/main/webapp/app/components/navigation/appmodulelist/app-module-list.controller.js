@@ -3,7 +3,7 @@
 
     angular
         .module('appNavigationModule')
-        .controller('appModuleListController', function ($scope, appModuleService) {
+        .controller('appModuleListController', function ($scope, appModuleService, appNavigationService) {
             $scope.appModulesTree = [];
             $scope.selectedMainModule = null;
             $scope.selectedSubModule = null;
@@ -26,6 +26,7 @@
             $scope.onSubModuleClick = function (module, $event) {
                 $event.stopPropagation();
                 $scope.selectedSubModule = module;
+                appNavigationService.changeActiveModule(module);
             };
 
             var fetchAppModules = function () {
@@ -45,6 +46,7 @@
                         $scope.expandMainModule = $scope.hasSubmodules($scope.selectedMainModule);
                         if ($scope.expandMainModule) {
                             $scope.selectedSubModule = $scope.selectedMainModule.subModules[0];
+                            appNavigationService.changeActiveModule($scope.selectedSubModule);
                         }
                     }
                 }, function (error) {
