@@ -40,12 +40,19 @@
 
         <!-- Core module -->
         <script src="app/components/services/core.module.js"></script>
-        <script src="app/components/services/user.service.js"></script>
+        <script src="app/components/services/user-session.service.js"></script>
         <script src="app/components/services/app-module.service.js"></script>
         <script src="app/components/services/app-navigation.service.js"></script>
+        <script src="app/components/services/user.service.js"></script>
 
         <!-- Auth module -->
         <script src="app/components/auth/auth.module.js"></script>
+        <script src="app/components/auth/login/page/login-page.controller.js"></script>
+        <script src="app/components/auth/login/form/login/login-form.directive.js"></script>
+        <script src="app/components/auth/login/form/login/login-form.controller.js"></script>
+        <script src="app/components/auth/login/form/register/register-form.directive.js"></script>
+        <script src="app/components/auth/login/form/register/register-form.controller.js"></script>
+
 
         <!-- User module -->
         <script src="app/components/user/user.module.js"></script>

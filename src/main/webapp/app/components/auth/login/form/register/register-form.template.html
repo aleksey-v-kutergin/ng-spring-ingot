@@ -1,0 +1,67 @@
+<form class="pane"  action=""  method="post" style="height: 50%;">
+    <div class="pane__head">
+        <div class="pane__head-pic-wrap">
+            <img class="pane__head-pic"  src="assets/img/register_request.svg">
+        </div>
+        <h2 class="pane__head-title">
+            Register request
+        </h2>
+    </div>
+
+    <div class="pane__body  pane__body--lg">
+        <div class="pane__row">
+            <div class="control">
+                <b class="control__label  control__label--require">Full name</b>
+                <input class="control__input  pane__input"  name="f-fullname"  value="Aleksey Kutergin">
+            </div>
+        </div>
+
+        <div class="pane__row">
+            <div class="control  control--error">
+                <b class="control__label  control__label--require">Login</b>
+                <span class="control__note">Login already exist</span>
+                <input class="control__input  pane__input"  name="f-login"  value="ivanov">
+            </div>
+        </div>
+
+        <div class="pane__row">
+            <div class="control">
+                <b class="control__label  control__label--require">Password</b>
+                <input class="control__input  pane__input"  type="password"  name="f-pass">
+            </div>
+        </div>
+
+        <!-- <div class="pane__row">
+            <div class="control">
+                <b class="control__label  control__label--require">Country</b>
+                <select class="control__input  pane__input  chosen  w-full"  name="f-municipality"  data-placeholder=" ">
+                    <option value=""></option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+        </div> -->
+
+        <div class="pane__row">
+            <div class="control"  title="Указанный адрес электронной почты будет использован для подтверждения регистрации и дальнейшего взаимодействия с Системой">
+                <b class="control__label  control__label--require">Email</b>
+                <input class="control__input  pane__input"  type="email"  name="f-email">
+            </div>
+        </div>
+
+        <div class="pane__row">
+            <div class="control">
+                <b class="control__label">Phone</b>
+                <input class="control__input  pane__input"  type="tel"  name="f-tel">
+            </div>
+        </div>
+    </div>
+
+    <div class="pane__foot  pane__foot--lg">
+        <div class="pane__foot-part  pane__foot-part--right">
+            <button class="btn btn--md"  type="button"  data-flip="" ng-click="onCancelClick($event)">Cancel</button>
+            <button class="btn  btn-blue  btn--md"  type="submit">Submit request</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,42 @@
+<div class="login-page" ng-cloak>
+
+    <div class="login-page__header">
+        <a class="login-page__header-in">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <img class="login-page__logo"  src="assets/img/product-logo.svg"  alt=""  width="103"  height="138">
+            <!-- <h1 class="login-page__title">
+                <span class="login-page__title-text  login-page__title-text--sm">
+                    System capital title
+                </span>
+                <span class="login-page__title-text  login-page__title-text--lg">
+                    System subtitle
+                </span>
+            </h1> -->
+        </a>
+    </div>
+
+    <div class="login-page__body  login-page__body--center">
+        <div ng-if="!needRegister">
+            <login-form></login-form>
+        </div>
+        <div ng-if="needRegister">
+            <register-form></register-form>
+        </div>
+    </div>
+
+    <div class="login-page__footer">
+        <div class="login-page__support">
+            Support<br>
+            8 (666) 666 6666<br>
+            <a href="mailto:ng-spring-ingot@rusquant.ru">
+                ng-spring-ingot@rusquant.ru
+            </a><br>
+        </div>
+        If there are no rights, contact the administrator
+    </div>
+
+</div>

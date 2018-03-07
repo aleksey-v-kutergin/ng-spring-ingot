@@ -6,6 +6,14 @@
      *    участвующие в процессе аунтификации пользователя: страница логина,
      *    форма логина и тд.
      **/
-    angular.module('authModule', []);
+    angular
+        .module('authModule', [
+                'ui.router',
+                'coreModule'
+        ])
+        .config(function ($httpProvider) {
+            $httpProvider.defaults.xsrfCookieName = 'XSRF-TOKEN';
+            $httpProvider.defaults.xsrfHeaderName = 'X-XSRF-TOKEN';
+        });
 
 })();

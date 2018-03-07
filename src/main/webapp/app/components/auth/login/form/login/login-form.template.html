@@ -1,0 +1,38 @@
+<form class="pane"  action=""  method="post" style="height: 35%;">
+    <div class="pane__head">
+        <div class="pane__head-pic-wrap">
+            <img class="pane__head-pic"  src="assets/img/adb_black.svg">
+        </div>
+        <h2 class="pane__head-title">
+            AngularJS Spring MVC App
+        </h2>
+    </div>
+
+    <div class="pane__body  pane__body--sm">
+        <div class="pane__row">
+            <div class="control">
+                <img src="assets/img/enter_login.svg" style="margin-bottom: -5px">
+                <b class="control__label">Login</b>
+                <input class="control__input  pane__input"  name="f-name">
+            </div>
+        </div>
+
+        <div class="pane__row">
+            <div class="control  control--error">
+                <img src="assets/img/enter_password.svg" style="margin-bottom: -5px">
+                <b class="control__label">Password</b>
+                <span class="control__note">Введите пароль</span>
+                <input class="control__input  pane__input"  name="f-password"  type="password">
+            </div>
+        </div>
+    </div>
+
+    <div class="pane__foot  pane__foot--sm">
+        <div class="pane__foot-part">
+            <a class="btn  btn--link" data-flip="" ng-click="onRegisterClick($event)">Register</a>
+        </div>
+        <div class="pane__foot-part  pane__foot-part--right">
+            <button class="btn  btn-blue  btn--md"  type="submit">Submit</button>
+        </div>
+    </div>
+</form>
