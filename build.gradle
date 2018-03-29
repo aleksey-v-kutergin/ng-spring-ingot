@@ -57,6 +57,8 @@ dependencies {
     // например кэширование через ecache, отправка электронной почты
     compile group: 'org.springframework', name: 'spring-context-support'
     compile group: 'org.springframework', name: 'spring-jdbc' // Пакет содержит классы, необходимые для создания БД из скриптов.
+    compile group: 'org.springframework.security', name: 'spring-security-web'
+    compile group: 'org.springframework.security', name: 'spring-security-config'
 
     // Работа с БД и доменный слой
     compile group: 'commons-dbcp', name: 'commons-dbcp' // DB-драйвера

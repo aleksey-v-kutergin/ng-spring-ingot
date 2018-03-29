@@ -17,6 +17,16 @@
                 return defer.promise;
             };
 
+            service.authenticateUser = function (credentials) {
+                var defer = $q.defer();
+                $http.post(this.apiUrlRoot + '/user/authenticate', credentials).then(function (response) {
+                    defer.resolve(response.data);
+                }, function (error) {
+                    defer.reject(error)
+                });
+                return defer.promise;
+            };
+
             return service;
         });
 
