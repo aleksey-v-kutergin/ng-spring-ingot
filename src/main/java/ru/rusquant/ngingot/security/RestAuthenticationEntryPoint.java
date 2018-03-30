@@ -2,6 +2,7 @@ package ru.rusquant.ngingot.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,8 @@ import java.io.PrintWriter;
  *    В случае использования базовой аунтификации, если процесс аунтификации провален
  *    то происходит активация базовой входной аунтификации
  **/
-public class CustomAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
+@Component
+public class RestAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request,
@@ -29,8 +31,7 @@ public class CustomAuthenticationEntryPoint extends BasicAuthenticationEntryPoin
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        setRealmName("TEST_REALM");
+        setRealmName("REST_REALM");
         super.afterPropertiesSet();
     }
-
 }
