@@ -10,8 +10,11 @@
             };
 
             $scope.onSubmitClick = function (event) {
-                console.log($scope.credentials);
-                userService.authenticateUser(credentials)
+                userService.authenticateUser($scope.credentials).then(function (success) {
+
+                }, function (error) {
+
+                });
             };
 
         });

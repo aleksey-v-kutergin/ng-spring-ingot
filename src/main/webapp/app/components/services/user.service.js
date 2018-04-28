@@ -18,11 +18,18 @@
             };
 
             service.authenticateUser = function (credentials) {
+                var that = this;
                 var defer = $q.defer();
-                $http.post(this.apiUrlRoot + '/user/authenticate', credentials).then(function (response) {
-                    defer.resolve(response.data);
+                $http.get(this.apiUrlRoot + '/auth/salt', {params: {login: credentials.username}}).then(function (response) {
+                    var salt = response.data;
+                    credentials.password += salt;
+                    $http.post(that.apiUrlRoot + '/auth/login', credentials).then(function (response) {
+                        defer.resolve(response.data);
+                    }, function (error) {
+                        defer.reject(error)
+                    });
                 }, function (error) {
-                    defer.reject(error)
+                    defer.reject(error);
                 });
                 return defer.promise;
             };

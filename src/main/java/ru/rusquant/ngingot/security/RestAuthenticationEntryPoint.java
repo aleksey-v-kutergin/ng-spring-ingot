@@ -1,37 +1,32 @@
 package ru.rusquant.ngingot.security;
 
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-/**
- *    В чем смылс:
- *    В случае использования базовой аунтификации, если процесс аунтификации провален
- *    то происходит активация базовой входной аунтификации
- **/
+
 @Component
-public class RestAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
+public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,
                          AuthenticationException authException) throws IOException, ServletException {
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        response.addHeader("WWW-Authenticate", "Basic realm=" + getRealmName() + "");
-
-        PrintWriter printWriter = response.getWriter();
-        printWriter.println("HTTP Status 401: " + authException.getMessage());
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        setRealmName("REST_REALM");
-        super.afterPropertiesSet();
+        // Метод commence(...) класса AuthenticationEntryPoint вызывается если
+        // в фильтре безопасности было бырошенно AuthenticationException, то есть
+        // если ни один из AuthenticationProvider-ров не вернул успешный Authentication
+        // По-русски, это метод вызвается если аунтификация провалена из-за не кривых логина\пароля
+        // или из-за того что клиент пытается получить доступ к защищенным ресурсам
+        // не предоставив учетных данных в запросе
+        // Дефолтным поведением Spring Security в этом случае будет редирект на страницу логина
+        // В REST API страницы логина нет, поэтому мы создаем кастомную AuthenticationEntryPoint
+        // для переопределения дефолтного поведения.
+        // Для REST API в этом случае достаточно отправить обратно ошибку: 401 Unauthorized
+        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
     }
 }

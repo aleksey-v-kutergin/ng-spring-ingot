@@ -7,7 +7,9 @@ import ru.rusquant.ngingot.utils.DateDeserializer;
 import ru.rusquant.ngingot.utils.DateSerializer;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static ru.rusquant.ngingot.utils.DateSerializer.DATE_PATTERN;
 
@@ -32,17 +34,34 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "role_type")
-    private Integer roleType;
-
     @Column(name = "registration_date")
     @DateTimeFormat(pattern = DATE_PATTERN)
     @JsonSerialize(using = DateSerializer.class)
     @JsonDeserialize(using = DateDeserializer.class)
     private Date registrationDate;
 
-    @Column(name = "is_password_expired")
-    private Boolean isPasswordExpired;
+    @Column(name = "account_lifetime")
+    private Long accountLifetime;
+
+    @Column(name = "last_password_reset_date")
+    @DateTimeFormat(pattern = DATE_PATTERN)
+    @JsonSerialize(using = DateSerializer.class)
+    @JsonDeserialize(using = DateDeserializer.class)
+    private Date lastPasswordResetDate;
+
+    @Column(name = "password_life_time")
+    private Long passwordLifetime;
+
+    @Column(name = "locked")
+    private Boolean locked;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_authorities",
+            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+    private List<Authority> authorities;
+
 
     public Long getId() {
         return id;
@@ -84,14 +103,6 @@ public class User {
         this.email = email;
     }
 
-    public Integer getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(Integer roleType) {
-        this.roleType = roleType;
-    }
-
     public Date getRegistrationDate() {
         return registrationDate;
     }
@@ -100,11 +111,59 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
-    public Boolean getPasswordExpired() {
-        return isPasswordExpired;
+    public Date getLastPasswordResetDate() {
+        return lastPasswordResetDate;
     }
 
-    public void setPasswordExpired(Boolean passwordExpired) {
-        isPasswordExpired = passwordExpired;
+    public void setLastPasswordResetDate(Date lastPasswordResetDate) {
+        this.lastPasswordResetDate = lastPasswordResetDate;
+    }
+
+    public Long getPasswordLifetime() {
+        return passwordLifetime;
+    }
+
+    public void setPasswordLifetime(Long passwordLifetime) {
+        this.passwordLifetime = passwordLifetime;
+    }
+
+    public Boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
+    public Long getAccountLifetime() {
+        return accountLifetime;
+    }
+
+    public void setAccountLifetime(Long accountLifetime) {
+        this.accountLifetime = accountLifetime;
+    }
+
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public List<Authority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authority> authorities) {
+        this.authorities = authorities;
+    }
+
+    public Boolean isPasswordExpired() {
+        final Date currentDate = Calendar.getInstance().getTime();
+        long diff = currentDate.getTime() - this.registrationDate.getTime();
+        return diff >= this.passwordLifetime;
+    }
+
+    public Boolean isAccountExpired() {
+        final Date currentDate = Calendar.getInstance().getTime();
+        long diff = currentDate.getTime() - this.registrationDate.getTime();
+        return diff >= this.accountLifetime;
     }
 }
